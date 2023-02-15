@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vite App</title>
+    </head>
+    <body>
+        <div class="container my-5">
+            <h2 class="text-center mb-4">Search Github Profile by Username</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div
+                        class="seach-form d-flex align-items-center rounded shadow-sm mb-4 border"
+                    >
+                        <input
+                            type="text"
+                            placeholder="Enter yourname ..."
+                            class="form-control border-0 seach-form-input"
+                        />
+                        <button
+                            class="btn btn-info rounded-0 seach-form-button"
+                        >
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <table class="table list-user">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Avatar</th>
+                                <th>Name</th>
+                                <th>Link github</th>
+                                <th>Link repo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <img
+                                        src="https://avatars.githubusercontent.com/u/1?v=4"
+                                        alt="mojombo"
+                                    />
+                                </td>
+                                <td>mojombo</td>
+                                <td>https://github.com/mojombo</td>
+                                <td>
+                                    https://api.github.com/users/mojombo/repos
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <img
+                                        src="https://avatars.githubusercontent.com/u/1?v=4"
+                                        alt="mojombo"
+                                    />
+                                </td>
+                                <td>mojombo</td>
+                                <td>https://github.com/mojombo</td>
+                                <td>
+                                    https://api.github.com/users/mojombo/repos
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Phân trang sử dụng PaginationJS -->
+                    <div
+                        class="pagination-container d-flex justify-content-center"
+                    ></div>
+                </div>
+            </div>
+        </div>
+
+        <script type="module" src="/main.js"></script>
+    </body>
+</html>
