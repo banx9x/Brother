@@ -1,16 +1,16 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { useOutletContext } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
-import { products } from "../lib/products";
 
 const Home = () => {
-    const ctx = useContext(CartContext);
+    const { data } = useOutletContext();
 
     return (
         <main>
             <Container>
                 <Row>
-                    {products.map((item) => (
+                    {data.map((item) => (
                         <Col xl={3}>
                             <ProductCard product={item} />
                         </Col>
