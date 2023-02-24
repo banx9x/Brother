@@ -132,11 +132,14 @@ const AppContext = createContext();
 const appReducer = (state, { type, payload }) => {
     switch (type) {
         case "add": {
+            // Gọi API để tạo Todo mới
             const newTodo = {
                 id: new Date().getTime(),
                 title: payload.title,
                 completed: false,
             };
+
+            // Nhận về dữ liệu Todo mới
 
             return {
                 ...state,
