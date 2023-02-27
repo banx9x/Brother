@@ -11,6 +11,9 @@ import Users from "./routes/users";
 import Posts from "./routes/posts";
 import Login from "./routes/login";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import Profile from "./routes/profile";
+import { Provider } from "react-redux";
+import store from "./features/store";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: "posts",
                 element: <Posts />,
+            },
+            {
+                path: "profile",
+                element: <Profile />,
             },
         ],
     },
@@ -61,10 +68,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <ConfigProvider theme={{}}>
-            <HelmetProvider>
-                <RouterProvider router={router} />
-            </HelmetProvider>
-        </ConfigProvider>
+        <Provider store={store}>
+            <ConfigProvider theme={{}}>
+                <HelmetProvider>
+                    <RouterProvider router={router} />
+                </HelmetProvider>
+            </ConfigProvider>
+        </Provider>
     </React.StrictMode>
 );

@@ -1,9 +1,10 @@
 import React from "react";
 import { Dropdown, FloatButton, Layout as AntLayout, Menu } from "antd";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import {
     DashboardOutlined,
     FileTextOutlined,
+    LogoutOutlined,
     NotificationOutlined,
     UserOutlined,
 } from "@ant-design/icons";
@@ -28,18 +29,32 @@ const menuItems = [
     },
 ];
 
-const userItems = [
-    {
-        key: "profile",
-        label: "Profile",
-    },
-    {
-        key: "logout",
-        label: "Logout",
-    },
-];
-
 const Layout = () => {
+    const navigate = useNavigate();
+
+    const userItems = [
+        {
+            key: "profile",
+            label: (
+                <Link to="profile">
+                    <UserOutlined /> Profile
+                </Link>
+            ),
+        },
+        {
+            key: "logout",
+            label: (
+                <>
+                    <LogoutOutlined /> Logout
+                </>
+            ),
+            onClick: () => {
+                console.log("Signout");
+                navigate("/login");
+            },
+        },
+    ];
+
     return (
         <AntLayout
             style={{
